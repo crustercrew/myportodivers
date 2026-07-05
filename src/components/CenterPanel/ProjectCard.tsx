@@ -22,8 +22,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <div
       className={
         highlighted
-          ? 'w-1/3 aspect-[3/4] border border-primary bg-surface-container/90 p-3 flex flex-col relative group cursor-pointer shadow-[0_0_15px_rgba(255,230,0,0.1)]'
-          : 'w-1/3 aspect-[3/4] border border-primary/40 bg-surface-container-low/80 p-3 flex flex-col group hover:border-primary transition-all cursor-pointer'
+          ? 'w-full lg:w-1/3 lg:aspect-[3/4] border border-primary bg-surface-container/90 p-3 flex flex-col relative group cursor-pointer shadow-[0_0_15px_rgba(255,230,0,0.1)]'
+          : 'w-full lg:w-1/3 lg:aspect-[3/4] border border-primary/40 bg-surface-container-low/80 p-3 flex flex-col group hover:border-primary transition-all cursor-pointer'
       }
     >
       <div className="w-full h-32 mb-3 border border-primary/20 overflow-hidden relative">
