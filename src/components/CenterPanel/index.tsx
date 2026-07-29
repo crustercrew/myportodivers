@@ -1,4 +1,4 @@
-import RadarBackground from './RadarBackground'
+import RadarBackground from '../ui/RadarBackground'
 import ProjectCard from './ProjectCard'
 import TacticalButtons from './TacticalButtons'
 import { projects } from '../../data/projects'

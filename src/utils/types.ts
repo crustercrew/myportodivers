@@ -30,3 +30,9 @@ export interface TerminalLine {
   type: TerminalLineType
   text: string
 }
+
+export interface ProfileData {
+  name: string
+  role: string
+  email: string
+}

@@ -1,9 +1,5 @@
-import type { BarColor, TechOpacity, TechStackEntry } from '../../utils/types'
-
-const barColorClasses: Record<BarColor, string> = {
-  primary: 'bg-primary',
-  'success-neon': 'bg-success-neon',
-}
+import type { TechOpacity, TechStackEntry } from '../../utils/types'
+import ProgressBar from '../ui/ProgressBar'
 
 // Tailwind's JIT scanner needs literal class strings, so opacity values are
 // mapped here rather than interpolated (e.g. `opacity-${n}` would not work).
@@ -25,16 +21,12 @@ export default function TechStackItem({ item, showTicks = false }: TechStackItem
         <span className="text-xs font-bold text-white tracking-widest">{item.name}</span>
         <span className="text-[10px] text-primary">PWR: {item.power}%</span>
       </div>
-      <div className="h-1 bg-background relative">
-        <div className={`h-full ${barColorClasses[item.barColor]}`} style={{ width: `${item.power}%` }}></div>
-        {showTicks && (
-          <div className="absolute inset-0 flex justify-between px-2">
-            <div className="w-px h-full bg-white/10"></div>
-            <div className="w-px h-full bg-white/10"></div>
-            <div className="w-px h-full bg-white/10"></div>
-          </div>
-        )}
-      </div>
+      <ProgressBar
+        value={item.power}
+        barColor={item.barColor}
+        showTicks={showTicks}
+        trackClassName="bg-background"
+      />
     </div>
   )
 }

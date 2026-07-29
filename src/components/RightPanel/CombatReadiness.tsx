@@ -1,17 +1,20 @@
 import TechStackItem from './TechStackItem'
 import { techStack } from '../../data/techStack'
+import SectionHeader from '../ui/SectionHeader'
+import ProgressBar from '../ui/ProgressBar'
 
 const READINESS_PERCENT = 88
 
 export default function CombatReadiness() {
   return (
-    <div className="flex-1 border border-primary/30 bg-surface-container-low flex flex-col">
+    <div className="flex-1 border border-primary/30 bg-surface-container-low flex flex-col min-h-0">
       <div className="p-4 border-b border-primary/30">
-        <h2 className="text-lg font-headline-lg text-white font-bold tracking-widest">COMBAT READINESS</h2>
+        <SectionHeader title="COMBAT READINESS" />
         <div className="flex items-center gap-2 mt-1">
-          <div className="h-1 flex-1 bg-surface-container">
-            <div className="h-full bg-primary" style={{ width: `${READINESS_PERCENT}%` }}></div>
-          </div>
+          <ProgressBar
+            value={READINESS_PERCENT}
+            className="flex-1"
+          />
           <span className="text-xs text-primary font-bold">{READINESS_PERCENT}%</span>
         </div>
       </div>

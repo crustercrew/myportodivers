@@ -1,6 +1,7 @@
 import { useRef, useState, type KeyboardEvent } from 'react'
 import { useTerminalContext } from '../../context/TerminalContext'
 import type { TerminalLineType } from '../../utils/types'
+import SectionHeader from '../ui/SectionHeader'
 
 const lineStyles: Record<TerminalLineType, string> = {
   system: 'text-primary/70',
@@ -8,7 +9,11 @@ const lineStyles: Record<TerminalLineType, string> = {
   user: 'text-white',
 }
 
-export default function AITerminal() {
+interface AITerminalProps {
+  onClose?: () => void
+}
+
+export default function AITerminal({ onClose }: AITerminalProps) {
   const { log, sendCommand } = useTerminalContext()
   const [value, setValue] = useState('')
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -31,9 +36,20 @@ export default function AITerminal() {
 
   return (
     <div className="flex-1 border border-primary/30 bg-surface-container-lowest flex flex-col overflow-hidden">
-      <div className="bg-primary/10 px-3 py-1 border-b border-primary/30 flex justify-between items-center">
-        <span className="text-[10px] font-bold text-primary tracking-widest">TACTICAL AI ASSISTANT</span>
-        <span className="material-symbols-outlined text-sm text-primary">terminal</span>
+      <div className="bg-primary/10 px-3 py-1 border-b border-primary/30 flex items-center justify-between">
+        <SectionHeader
+          title="AI ASSISTANT"
+          className="text-[10px]"
+        />
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="text-primary/50 hover:text-primary transition-colors ml-2"
+            title="Close terminal"
+          >
+            <span className="material-symbols-outlined text-sm">close</span>
+          </button>
+        )}
       </div>
 
       <div
