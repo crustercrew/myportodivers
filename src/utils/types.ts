@@ -11,6 +11,9 @@ export interface Project {
   metricLabel: string
   metricValue: number
   highlighted: boolean
+  techStack: string[]
+  liveUrl?: string
+  repoUrl?: string
 }
 
 export type BarColor = 'primary' | 'success-neon'
@@ -32,7 +35,9 @@ export interface TerminalLine {
 }
 
 export interface ProfileData {
+  id: string
   name: string
   role: string
   email: string
+  location: string
 }

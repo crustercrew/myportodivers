@@ -7,17 +7,30 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { name, description, image, imageAlt, status, statusColor, metricLabel, metricValue, highlighted } =
-    project
+  const {
+    name,
+    description,
+    image,
+    imageAlt,
+    status,
+    statusColor,
+    metricLabel,
+    metricValue,
+    highlighted,
+    techStack,
+    liveUrl,
+    repoUrl,
+  } = project
 
   return (
     <div
       className={
         highlighted
-          ? 'w-full lg:w-1/3 lg:aspect-[3/4] border border-primary bg-surface-container/90 p-3 flex flex-col relative group cursor-pointer shadow-[0_0_15px_rgba(255,230,0,0.1)]'
-          : 'w-full lg:w-1/3 lg:aspect-[3/4] border border-primary/40 bg-surface-container-low/80 p-3 flex flex-col group hover:border-primary transition-all cursor-pointer'
+          ? 'border border-primary bg-surface-container/90 p-3 flex flex-col relative group cursor-pointer shadow-[0_0_15px_rgba(255,230,0,0.1)]'
+          : 'border border-primary/40 bg-surface-container-low/80 p-3 flex flex-col group hover:border-primary transition-all cursor-pointer'
       }
     >
+      {/* ── Project Image ── */}
       <div className="w-full h-32 mb-3 border border-primary/20 overflow-hidden relative">
         <img
           className={
@@ -35,16 +48,62 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
 
+      {/* ── Title & Description ── */}
       <h3 className="text-xs font-bold text-white mb-1">{name}</h3>
-      <p className="text-[9px] text-primary/60 mb-4">{description}</p>
+      <p className="text-[9px] text-primary/60 mb-3">{description}</p>
 
-      <div className="mt-auto pt-2 border-t border-primary/10">
+      {/* ── Tech Stack Tags ── */}
+      <div className="flex flex-wrap gap-1.5 mb-3">
+        {techStack.map((tech) => (
+          <span
+            key={tech}
+            className="px-2 py-0.5 text-[9px] font-mono font-bold tracking-wider border border-primary/40 text-primary/80 bg-primary/5 hover:bg-primary/15 hover:border-primary/70 transition-colors"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {/* ── Progress Bar ── */}
+      <div className="mb-3">
         <ProgressBar
           value={metricValue}
           barColor={statusColor}
           label={metricLabel}
           showValue
         />
+      </div>
+
+      {/* ── Footer: Live Demo + Repo Buttons ── */}
+      <div className="mt-auto grid grid-cols-2 gap-2 pt-2 border-t border-primary/20">
+        <a
+          href={liveUrl ?? '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => !liveUrl && e.preventDefault()}
+          className={`flex items-center justify-center gap-1.5 py-1.5 text-[10px] font-bold font-mono tracking-widest border transition-all ${
+            liveUrl
+              ? 'border-primary text-primary bg-primary/10 hover:bg-primary hover:text-black'
+              : 'border-primary/20 text-primary/30 cursor-not-allowed'
+          }`}
+        >
+          <span className="material-symbols-outlined text-xs">open_in_new</span>
+          LIVE_DEMO
+        </a>
+        <a
+          href={repoUrl ?? '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => !repoUrl && e.preventDefault()}
+          className={`flex items-center justify-center gap-1.5 py-1.5 text-[10px] font-bold font-mono tracking-widest border transition-all ${
+            repoUrl
+              ? 'border-primary/50 text-primary/70 bg-surface-container/50 hover:border-primary hover:text-primary hover:bg-primary/10'
+              : 'border-primary/20 text-primary/30 cursor-not-allowed'
+          }`}
+        >
+          <span className="material-symbols-outlined text-xs">code</span>
+          REPO
+        </a>
       </div>
     </div>
   )

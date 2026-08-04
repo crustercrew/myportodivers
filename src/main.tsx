@@ -6,6 +6,7 @@ import {
 } from '@arwes/react'
 import App from './App'
 import { TerminalProvider } from './context/TerminalContext'
+import { NavigationProvider } from './context/NavigationContext'
 import './index.css'
 
 /**
@@ -67,7 +68,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <AnimatorGeneralProvider {...animatorGeneralSettings}>
       <BleepsProvider {...bleepsSettings}>
         <TerminalProvider>
-          <App />
+          <NavigationProvider>
+            <App />
+          </NavigationProvider>
         </TerminalProvider>
       </BleepsProvider>
     </AnimatorGeneralProvider>
