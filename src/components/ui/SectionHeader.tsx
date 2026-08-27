@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Animator, Text } from '@arwes/react'
 
 interface SectionHeaderProps {
   /** Main heading text. */
@@ -14,7 +15,7 @@ interface SectionHeaderProps {
 
 /**
  * A tactical-style section header used across panels.
- * Renders a bold tracking-widest title with optional subtitle and right-side content.
+ * Renders a bold tracking-widest title with Arwes decipher text animation.
  */
 export default function SectionHeader({
   title,
@@ -26,9 +27,15 @@ export default function SectionHeader({
   return (
     <div className={`flex justify-between items-center ${className}`}>
       <div>
-        <h2 className="text-lg font-headline-lg text-white font-bold tracking-widest">
-          {title}
-        </h2>
+        <Animator key={title}>
+          <Text
+            as="h2"
+            manager="decipher"
+            className="text-lg font-headline-lg text-white font-bold tracking-widest block"
+          >
+            {title}
+          </Text>
+        </Animator>
         {subtitle && (
           <p className="text-[10px] text-primary/70">{subtitle}</p>
         )}
@@ -41,3 +48,4 @@ export default function SectionHeader({
     </div>
   )
 }
+

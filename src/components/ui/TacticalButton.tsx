@@ -11,8 +11,8 @@ interface TacticalButtonProps {
 
 const variantStyles: Record<'outline' | 'filled', string> = {
   outline:
-    'border border-primary/50 text-primary hover:bg-primary hover:text-black transition-all',
-  filled: 'bg-primary text-black',
+    'border border-primary/50 text-primary hover:bg-primary hover:text-black transition-all cursor-pointer',
+  filled: 'bg-primary text-black cursor-pointer',
 }
 
 /**

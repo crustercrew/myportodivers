@@ -17,9 +17,6 @@ export default function Header() {
     <header className="flex items-center justify-between border border-primary px-3 sm:px-6 py-2 bg-surface-container-lowest mb-2 min-h-[56px] shrink-0 gap-2 sm:gap-4">
       {/* ── Left: Title / Ship Branding ── */}
       <div className="flex items-center gap-2 shrink-0">
-        {/* <span className="material-symbols-outlined text-primary text-base hidden sm:inline">
-          people
-        </span> */}
         <h1 className="font-headline-lg text-xs sm:text-base uppercase tracking-widest sm:tracking-[0.2em] text-primary font-bold whitespace-nowrap">
           [SES CRUSTERCREW]
         </h1>
@@ -52,3 +49,4 @@ export default function Header() {
     </header>
   )
 }
+

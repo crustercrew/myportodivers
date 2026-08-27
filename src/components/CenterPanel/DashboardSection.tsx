@@ -1,13 +1,17 @@
 import SectionHeader from '../ui/SectionHeader'
 import ProgressBar from '../ui/ProgressBar'
 import StatusBadge from '../ui/StatusBadge'
-import { useNavigation } from '../../context/NavigationContext'
+import { useNavigation, type SectionId } from '../../context/NavigationContext'
 import { profileData } from '../../data/profileData'
 import { projects } from '../../data/projects'
 import { techStack } from '../../data/techStack'
 
 export default function DashboardSection() {
   const { setActiveSection } = useNavigation()
+
+  const navigateTo = (section: SectionId) => {
+    setActiveSection(section)
+  }
 
   return (
     <div className="flex flex-col h-full animate-fade-in">
@@ -82,7 +86,7 @@ export default function DashboardSection() {
               </div>
             </div>
             <button
-              onClick={() => setActiveSection('ABOUT')}
+              onClick={() => navigateTo('ABOUT')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-mono text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-1 transition-all"
             >
               <span>ACCESS FULL DOSSIER</span>
@@ -118,7 +122,7 @@ export default function DashboardSection() {
               </div>
             </div>
             <button
-              onClick={() => setActiveSection('PROJECTS')}
+              onClick={() => navigateTo('PROJECTS')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-mono text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-1 transition-all"
             >
               <span>VIEW ALL MISSIONS ({projects.length})</span>
@@ -155,7 +159,7 @@ export default function DashboardSection() {
               </div>
             </div>
             <button
-              onClick={() => setActiveSection('SKILLS')}
+              onClick={() => navigateTo('SKILLS')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-mono text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-1 transition-all"
             >
               <span>OPEN SKILL MATRIX</span>
@@ -193,7 +197,7 @@ export default function DashboardSection() {
               </div>
             </div>
             <button
-              onClick={() => setActiveSection('EXPERIENCE')}
+              onClick={() => navigateTo('EXPERIENCE')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-mono text-[10px] font-bold tracking-widest uppercase flex items-center justify-center gap-1 transition-all"
             >
               <span>VIEW FULL SERVICE LOGS</span>
