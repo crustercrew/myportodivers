@@ -1,0 +1,7 @@
+services:
+  server:
+    build:
+      context: .
+    ports:
+      # Map localhost 8080 to container port 80 (Nginx)
+      - 8080:80
