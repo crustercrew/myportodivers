@@ -29,7 +29,7 @@ export default function TacticalButton({
 }: TacticalButtonProps) {
   return (
     <button
-      className={`py-2 text-[10px] font-bold flex items-center justify-center gap-2 ${variantStyles[variant]} ${className}`}
+      className={`py-2 text-xs font-headline font-bold tracking-wider flex items-center justify-center gap-2 ${variantStyles[variant]} ${className}`}
       onClick={onClick}
     >
       {icon && (

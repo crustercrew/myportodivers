@@ -20,7 +20,7 @@ export default function CombatReadiness() {
       </div>
 
       <div className="flex-1 p-4 overflow-y-auto custom-scrollbar space-y-4">
-        <p className="text-[10px] text-primary font-bold tracking-wider mb-2">SYSTEM ARSENAL</p>
+        <p className="text-xs text-primary font-bold tracking-wider mb-2 font-headline">SYSTEM ARSENAL</p>
         <div className="space-y-4">
           {techStack.map((item, i) => (
             <TechStackItem key={item.id} item={item} showTicks={i === 0} />
@@ -28,7 +28,7 @@ export default function CombatReadiness() {
         </div>
       </div>
 
-      <div className="p-3 bg-primary text-black font-bold text-[10px] flex justify-between items-center">
+      <div className="p-3 bg-primary text-black font-bold text-xs font-headline flex justify-between items-center tracking-wider">
         <span>SECTOR: 0X-DELTA</span>
         <span className="blinking">STABLE</span>
       </div>

@@ -20,39 +20,39 @@ export default function ExperienceSection() {
             <span className="material-symbols-outlined text-3xl text-primary animate-pulse">work_history</span>
           </div>
 
-          <h3 className="text-sm font-bold text-white tracking-[0.2em] uppercase font-mono mb-2">
+          <h3 className="text-sm font-bold text-white tracking-wider uppercase font-headline mb-2">
             [ DEPLOYMENT ARCHIVES UNDER CLASSIFICATION REVIEW ]
           </h3>
-          <p className="text-xs text-primary/60 max-w-md font-mono mb-6">
+          <p className="text-xs text-zinc-300 max-w-md font-sans mb-6 leading-relaxed">
             Detailed mission campaigns, past squadron records, and engineering service logs are currently being compiled.
           </p>
 
           <div className="flex items-center gap-2 border border-primary/30 bg-primary/10 px-4 py-2">
             <span className="inline-block w-2 h-2 rounded-full bg-success-neon animate-ping" />
-            <span className="text-[10px] font-mono text-primary tracking-widest uppercase">
+            <span className="text-[10px] font-headline font-bold text-primary tracking-wider uppercase">
               STATUS: READY FOR DATA ENTRY
             </span>
           </div>
         </div>
 
         {/* Tactical blueprint mockup preview */}
-        <div className="space-y-3 opacity-60">
-          <h4 className="text-[10px] font-bold text-primary/70 tracking-[0.3em] uppercase font-mono">
+        <div className="space-y-3 opacity-70">
+          <h4 className="text-xs font-bold text-primary/80 tracking-wider uppercase font-headline">
             // SERVICE TIMELINE BLUEPRINT //
           </h4>
           <div className="space-y-3">
             {[
-              { role: 'SENIOR FRONTEND ENGINEER', unit: 'FLEET OPERATIONS', period: '2023 — PRESENT', badge: 'ACTIVE' },
-              { role: 'WEB SYSTEMS DEVELOPER', unit: 'TACTICAL COMMAND HQ', period: '2021 — 2023', badge: 'COMPLETED' },
+              { role: 'APPLICATION DEVELOPER', unit: 'PT MITRA INTEGRASI INFORMATIKA (METRODATA)', period: '2023 — PRESENT', badge: 'ACTIVE' },
+              { role: 'DESKTOP SUPPORT / PHP DEVELOPER', unit: 'PT BERCA / PT SBG SOLUSI BISNIS', period: '2022 — 2023', badge: 'COMPLETED' },
             ].map((item, idx) => (
-              <div key={idx} className="border-l-2 border-primary/50 bg-surface-container/30 p-4 flex justify-between items-center">
+              <div key={idx} className="border-l-2 border-primary/50 bg-surface-container/50 p-4 flex justify-between items-center">
                 <div>
-                  <p className="text-xs font-bold text-white font-mono">{item.role}</p>
-                  <p className="text-[10px] text-primary/60 font-mono">{item.unit}</p>
+                  <p className="text-xs font-bold text-white font-headline tracking-wide">{item.role}</p>
+                  <p className="text-[11px] text-zinc-300 font-sans mt-0.5">{item.unit}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-[9px] font-mono text-primary/40 block">{item.period}</span>
-                  <span className="text-[8px] font-mono text-success-neon">[{item.badge}]</span>
+                  <span className="text-[10px] font-mono text-primary/60 block">{item.period}</span>
+                  <span className="text-[9px] font-mono text-success-neon font-bold">[{item.badge}]</span>
                 </div>
               </div>
             ))}

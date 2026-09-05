@@ -4,9 +4,9 @@ import type { TerminalLineType } from '../../utils/types'
 import SectionHeader from '../ui/SectionHeader'
 
 const lineStyles: Record<TerminalLineType, string> = {
-  system: 'text-primary/70',
+  system: 'text-primary/80',
   ai: 'text-success-neon',
-  user: 'text-white',
+  user: 'text-zinc-100',
 }
 
 interface AITerminalProps {
@@ -38,8 +38,8 @@ export default function AITerminal({ onClose }: AITerminalProps) {
     <div className="flex-1 border border-primary/30 bg-surface-container-lowest flex flex-col overflow-hidden">
       <div className="bg-primary/10 px-3 py-1 border-b border-primary/30 flex items-center justify-between">
         <SectionHeader
-          title="AI ASSISTANT"
-          className="text-[10px]"
+          title="BERNOV@TERMINAL:~$"
+          className="text-xs font-mono"
         />
         {onClose && (
           <button

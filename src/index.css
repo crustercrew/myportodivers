@@ -4,8 +4,10 @@
 
 body {
   background-color: #0b0c10;
-  color: #e0e0e0;
-  font-family: 'JetBrains Mono', monospace;
+  color: #e3e2e8;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
   height: 100vh;
   margin: 0;

@@ -37,7 +37,7 @@ export default function SectionHeader({
           </Text>
         </Animator>
         {subtitle && (
-          <p className="text-[10px] text-primary/70">{subtitle}</p>
+          <p className="text-xs font-headline font-medium text-primary/80 tracking-wider mt-0.5">{subtitle}</p>
         )}
       </div>
       {rightContent

@@ -3,17 +3,17 @@ import type { TerminalLine } from '../utils/types'
 import { getCommandResponse } from '../services/commandService'
 
 const initialLog: TerminalLine[] = [
-  { type: 'system', text: '[14:20:01] Initializing neural link...' },
-  { type: 'system', text: '[14:20:03] Syncing with Fleet Command.' },
+  { type: 'system', text: '[sys] Linux kernel 6.8.9-fedora initialized.' },
+  { type: 'system', text: '[net] Connected to bernov.dev runtime daemon (TLSv1.3)' },
   {
     type: 'ai',
-    text: 'AI: Admiral, sector 7G shows increased activity. Deployment protocols are ready for your authorization.',
+    text: 'bernov@dev:~$ Ready. Type "help", "skills", "projects", or "contact" for quick telemetry.',
   },
-  { type: 'user', text: 'USER: Run diagnostic on Hyper-Drive systems.' },
-  { type: 'system', text: '[14:21:45] Scanning subsystems...' },
+  { type: 'user', text: 'guest@terminal:~$ ./fetch_profile.sh --summary' },
+  { type: 'system', text: '[sys] Loading enterprise middleware & banking systems...' },
   {
     type: 'ai',
-    text: 'AI: Hyper-Drive at 98% efficiency. Minor cooling fluctuation in Coil 4 detected. Automated repair in progress.',
+    text: 'bernov@dev:~$ Profile verified: Application Developer with 3+ YRS experience in Java, Spring Boot, webMethods, & OutSystems.',
   },
 ]
 

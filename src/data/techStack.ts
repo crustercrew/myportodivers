@@ -1,8 +1,11 @@
 import type { TechStackEntry } from '../utils/types'
 
 export const techStack: TechStackEntry[] = [
-  { id: 'react', name: 'REACT ENGINE', power: 92, opacity: 100, barColor: 'primary' },
-  { id: 'nextjs', name: 'NEXT.JS MOD-V', power: 78, opacity: 80, barColor: 'primary' },
-  { id: 'node', name: 'NODE CORES', power: 65, opacity: 80, barColor: 'primary' },
-  { id: 'tailwind', name: 'TAILWIND ARMOR', power: 100, opacity: 60, barColor: 'success-neon' },
+  { id: 'java-spring', name: 'JAVA / SPRING BOOT', power: 95, opacity: 100, barColor: 'primary' },
+  { id: 'webmethods', name: 'WEBMETHODS (INTEGRATION)', power: 92, opacity: 100, barColor: 'primary' },
+  { id: 'outsystems', name: 'OUTSYSTEMS / .NET', power: 88, opacity: 80, barColor: 'primary' },
+  { id: 'database', name: 'ORACLE SQL / POSTGRESQL', power: 90, opacity: 80, barColor: 'primary' },
+  { id: 'react-ts', name: 'REACTJS / TYPESCRIPT', power: 85, opacity: 60, barColor: 'success-neon' },
+  { id: 'php-mvc', name: 'PHP / LARAVEL / YII', power: 82, opacity: 60, barColor: 'primary' },
 ]
+

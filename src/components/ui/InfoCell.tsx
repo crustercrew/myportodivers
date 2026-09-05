@@ -19,9 +19,9 @@ export default function InfoCell({
   className = '',
 }: InfoCellProps) {
   return (
-    <div className={`border border-primary/20 p-1 bg-surface-container ${className}`}>
-      <p className="text-[8px] text-primary/50 uppercase">{label}</p>
-      <p className={`text-[10px] ${valueClassName}`}>{value}</p>
+    <div className={`border border-primary/25 p-1.5 bg-surface-container/70 ${className}`}>
+      <p className="text-[9px] text-primary/80 uppercase font-headline font-medium tracking-wider">{label}</p>
+      <p className={`text-xs font-headline font-bold tracking-wide ${valueClassName}`}>{value}</p>
     </div>
   )
 }

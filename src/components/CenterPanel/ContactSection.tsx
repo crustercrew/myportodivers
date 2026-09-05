@@ -18,10 +18,10 @@ export default function ContactSection() {
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-2xl text-primary animate-pulse">satellite_alt</span>
             <div>
-              <h3 className="text-sm font-bold text-white font-mono tracking-widest uppercase">
+              <h3 className="text-sm font-bold text-white font-headline tracking-wider uppercase">
                 ESTABLISH SECURE LINK
               </h3>
-              <p className="text-[10px] text-primary/60 font-mono">
+              <p className="text-xs text-primary/80 font-headline">
                 BROADCAST DIRECT MESSAGE TO OPERATOR TERMINAL
               </p>
             </div>
@@ -30,31 +30,47 @@ export default function ContactSection() {
           <div className="w-full h-px bg-primary/20 my-2" />
 
           <div className="space-y-3">
-            <div className="border border-primary/15 bg-surface-container p-3 flex items-center justify-between">
+            <div className="border border-primary/20 bg-surface-container/70 p-3.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary/60 text-base">mail</span>
+                <span className="material-symbols-outlined text-primary text-lg">mail</span>
                 <div>
-                  <p className="text-[9px] text-primary/50 uppercase tracking-widest font-mono">EMAIL RELAY</p>
+                  <p className="text-[10px] text-primary/80 uppercase font-headline font-semibold tracking-wider">EMAIL RELAY</p>
                   <a
                     href={`mailto:${profileData.email}`}
-                    className="text-xs text-white/90 font-mono hover:text-primary transition-colors"
+                    className="text-xs text-zinc-100 font-sans hover:text-primary transition-colors"
                   >
                     {profileData.email}
                   </a>
                 </div>
               </div>
-              <span className="text-[9px] font-mono text-success-neon">[DIRECT]</span>
+              <span className="text-[10px] font-mono text-success-neon font-bold">[DIRECT]</span>
             </div>
 
-            <div className="border border-primary/15 bg-surface-container p-3 flex items-center justify-between">
+            <div className="border border-primary/20 bg-surface-container/70 p-3.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary/60 text-base">location_on</span>
+                <span className="material-symbols-outlined text-primary text-lg">call</span>
                 <div>
-                  <p className="text-[9px] text-primary/50 uppercase tracking-widest font-mono">CURRENT BASE</p>
-                  <p className="text-xs text-white/90 font-mono">{profileData.location}</p>
+                  <p className="text-[10px] text-primary/80 uppercase font-headline font-semibold tracking-wider">SECURE COMMS / PHONE</p>
+                  <a
+                    href="tel:+62895420825511"
+                    className="text-xs text-zinc-100 font-sans hover:text-primary transition-colors"
+                  >
+                    +62 89 542 082 5511
+                  </a>
                 </div>
               </div>
-              <span className="text-[9px] font-mono text-primary/60">[PLANETARY]</span>
+              <span className="text-[10px] font-mono text-success-neon font-bold">[VOICE/WA]</span>
+            </div>
+
+            <div className="border border-primary/20 bg-surface-container/70 p-3.5 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary text-lg">location_on</span>
+                <div>
+                  <p className="text-[10px] text-primary/80 uppercase font-headline font-semibold tracking-wider">CURRENT BASE</p>
+                  <p className="text-xs text-zinc-100 font-sans">{profileData.location}</p>
+                </div>
+              </div>
+              <span className="text-[10px] font-mono text-primary/70">[PLANETARY]</span>
             </div>
           </div>
         </div>

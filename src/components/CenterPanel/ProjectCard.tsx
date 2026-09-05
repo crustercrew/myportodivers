@@ -49,15 +49,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* ── Title & Description ── */}
-      <h3 className="text-xs font-bold text-white mb-1">{name}</h3>
-      <p className="text-[9px] text-primary/60 mb-3">{description}</p>
+      <h3 className="text-xs font-bold text-white font-headline tracking-wide mb-1">{name}</h3>
+      <p className="text-[11px] text-zinc-300 font-sans leading-relaxed mb-3">{description}</p>
 
       {/* ── Tech Stack Tags ── */}
       <div className="flex flex-wrap gap-1.5 mb-3">
         {techStack.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-0.5 text-[9px] font-mono font-bold tracking-wider border border-primary/40 text-primary/80 bg-primary/5 hover:bg-primary/15 hover:border-primary/70 transition-colors"
+            className="px-2 py-0.5 text-[10px] font-mono font-medium tracking-wide border border-primary/40 text-primary/90 bg-primary/10 hover:bg-primary/20 hover:border-primary transition-colors"
           >
             {tech}
           </span>
@@ -81,11 +81,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => !liveUrl && e.preventDefault()}
-          className={`flex items-center justify-center gap-1.5 py-1.5 text-[10px] font-bold font-mono tracking-widest border transition-all ${
-            liveUrl
+          className={`flex items-center justify-center gap-1.5 py-1.5 text-xs font-bold font-headline tracking-wider border transition-all ${liveUrl
               ? 'border-primary text-primary bg-primary/10 hover:bg-primary hover:text-black'
               : 'border-primary/20 text-primary/30 cursor-not-allowed'
-          }`}
+            }`}
         >
           <span className="material-symbols-outlined text-xs">open_in_new</span>
           LIVE_DEMO
@@ -95,11 +94,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => !repoUrl && e.preventDefault()}
-          className={`flex items-center justify-center gap-1.5 py-1.5 text-[10px] font-bold font-mono tracking-widest border transition-all ${
-            repoUrl
-              ? 'border-primary/50 text-primary/70 bg-surface-container/50 hover:border-primary hover:text-primary hover:bg-primary/10'
+          className={`flex items-center justify-center gap-1.5 py-1.5 text-xs font-bold font-headline tracking-wider border transition-all ${repoUrl
+              ? 'border-primary/50 text-primary/80 bg-surface-container/50 hover:border-primary hover:text-primary hover:bg-primary/10'
               : 'border-primary/20 text-primary/30 cursor-not-allowed'
-          }`}
+            }`}
         >
           <span className="material-symbols-outlined text-xs">code</span>
           REPO

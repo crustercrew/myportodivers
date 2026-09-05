@@ -19,36 +19,36 @@ export default function SkillsSection() {
             <span className="material-symbols-outlined text-3xl text-primary animate-pulse">engineering</span>
           </div>
 
-          <h3 className="text-sm font-bold text-white tracking-[0.2em] uppercase font-mono mb-2">
+          <h3 className="text-sm font-bold text-white tracking-wider uppercase font-headline mb-2">
             [ SKILL MATRIX CALIBRATION IN PROGRESS ]
           </h3>
-          <p className="text-xs text-primary/60 max-w-md font-mono mb-6">
+          <p className="text-xs text-zinc-300 max-w-md font-sans mb-6 leading-relaxed">
             Arsenal power ratings, tech stratagems, framework proficiency indexes, and tactical toolings are awaiting configuration.
           </p>
 
           <div className="flex items-center gap-2 border border-primary/30 bg-primary/10 px-4 py-2">
             <span className="inline-block w-2 h-2 rounded-full bg-success-neon animate-ping" />
-            <span className="text-[10px] font-mono text-primary tracking-widest uppercase">
+            <span className="text-[10px] font-headline font-bold text-primary tracking-wider uppercase">
               STATUS: READY FOR DATA ENTRY
             </span>
           </div>
         </div>
 
         {/* Blueprint preview */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 opacity-60">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 opacity-80">
           {[
-            { category: 'CORE ARSENAL', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'] },
-            { category: 'SUPPORT SYSTEMS', items: ['Node.js', 'REST / GraphQL', 'PostgreSQL', 'Git'] },
-            { category: 'TACTICAL TOOLS', items: ['Vite', 'Figma', 'Docker', 'Jest / Vitest'] },
+            { category: 'CORE BACKEND', items: ['Java / Spring Boot', 'Software AG webMethods', 'OutSystems / .NET', 'PHP / Laravel'] },
+            { category: 'DATABASES & CACHE', items: ['Oracle SQL', 'PostgreSQL', 'MySQL', 'Redis Caching'] },
+            { category: 'TOOLS & STANDARDS', items: ['Apache JMeter', 'Docker', 'QRIS Payment Standards', 'REST APIs'] },
           ].map((cat, i) => (
-            <div key={i} className="border border-primary/20 bg-surface-container/30 p-4">
-              <h5 className="text-[10px] font-bold text-primary tracking-widest font-mono mb-2">
+            <div key={i} className="border border-primary/20 bg-surface-container/50 p-4">
+              <h5 className="text-[11px] font-bold text-primary tracking-wider font-headline mb-2">
                 // {cat.category}
               </h5>
               <ul className="space-y-1">
                 {cat.items.map((it) => (
-                  <li key={it} className="text-[11px] font-mono text-white/70 flex items-center gap-1.5">
-                    <span className="text-primary/40">▸</span> {it}
+                  <li key={it} className="text-xs font-sans text-zinc-300 flex items-center gap-1.5">
+                    <span className="text-primary/70">▸</span> {it}
                   </li>
                 ))}
               </ul>

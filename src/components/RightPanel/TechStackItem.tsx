@@ -18,8 +18,8 @@ export default function TechStackItem({ item, showTicks = false }: TechStackItem
   return (
     <div className={`border-l-2 border-primary bg-surface-container p-2 flex flex-col gap-2 ${opacityClasses[item.opacity]}`}>
       <div className="flex justify-between items-center">
-        <span className="text-xs font-bold text-white tracking-widest">{item.name}</span>
-        <span className="text-[10px] text-primary">PWR: {item.power}%</span>
+        <span className="text-xs font-bold text-white font-headline tracking-wide">{item.name}</span>
+        <span className="text-xs text-primary font-headline font-bold">PWR: {item.power}%</span>
       </div>
       <ProgressBar
         value={item.power}

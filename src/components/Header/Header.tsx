@@ -18,7 +18,7 @@ export default function Header() {
       {/* ── Left: Title / Ship Branding ── */}
       <div className="flex items-center gap-2 shrink-0">
         <h1 className="font-headline-lg text-xs sm:text-base uppercase tracking-widest sm:tracking-[0.2em] text-primary font-bold whitespace-nowrap">
-          [SES CRUSTERCREW]
+          [<span className="hidden sm:inline">SES </span>CRUSTERCREW]
         </h1>
       </div>
 
@@ -30,9 +30,9 @@ export default function Header() {
             <button
               key={item.label}
               onClick={() => setActiveSection(item.label)}
-              className={`flex items-center gap-1.5 px-2 sm:px-2.5 py-1 text-[10px] sm:text-[11px] font-bold font-mono tracking-widest border whitespace-nowrap shrink-0 transition-all cursor-pointer ${isActive
+              className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1 text-xs font-bold font-headline tracking-wider border whitespace-nowrap shrink-0 transition-all cursor-pointer ${isActive
                 ? 'bg-primary text-black border-primary shadow-[0_0_10px_rgba(255,230,0,0.3)]'
-                : 'text-primary/70 border-primary/30 bg-surface-container/30 hover:bg-primary hover:text-black hover:border-primary'
+                : 'text-primary/80 border-primary/30 bg-surface-container/30 hover:bg-primary hover:text-black hover:border-primary'
                 }`}
             >
               <span className="material-symbols-outlined text-xs sm:text-sm">{item.icon}</span>

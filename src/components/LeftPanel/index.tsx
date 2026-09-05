@@ -12,11 +12,11 @@ export default function LeftPanel() {
         <AITerminal onClose={() => setTerminalOpen(false)} />
       ) : (
         <button
-          className="border border-primary/30 bg-surface-container-lowest px-3 py-2 flex items-center justify-center gap-2 text-[10px] font-bold text-primary tracking-widest hover:bg-primary/10 transition-colors shrink-0"
+          className="border border-primary/40 bg-surface-container-lowest px-3 py-2 flex items-center justify-center gap-2 text-xs font-headline font-bold text-primary tracking-wider hover:bg-primary/10 transition-colors shrink-0 cursor-pointer"
           onClick={() => setTerminalOpen(true)}
         >
           <span className="material-symbols-outlined text-sm">terminal</span>
-          OPEN TACTICAL AI
+          OPEN AI TERMINAL
         </button>
       )}
     </aside>
