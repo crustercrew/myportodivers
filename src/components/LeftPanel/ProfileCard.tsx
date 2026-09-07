@@ -88,14 +88,14 @@ export default function ProfileCard({ expanded = true }: ProfileCardProps) {
 
           {/* Social / contact icon row */}
           <div className="grid grid-cols-4 gap-2 mt-2">
-            <a
+            <a data-sound
               href={`mailto:${profileData.email}`}
               title="Send Email"
               className="border border-primary/30 bg-surface-container py-2 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors"
             >
               <MdEmail className="text-primary w-5 h-5" />
             </a>
-            <button
+            <button data-sound
               onClick={() => window.open('https://github.com/crustercrew', '_blank')}
               title="Github"
               className="border border-primary/30 bg-surface-container py-2 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors cursor-pointer"
@@ -103,14 +103,14 @@ export default function ProfileCard({ expanded = true }: ProfileCardProps) {
               {/* <span className="material-symbols-outlined text-base">code</span> */}
               <FaGithub className="text-primary w-5 h-5" />
             </button>
-            <button
+            <button data-sound
               onClick={() => window.open('https://www.linkedin.com/in/muhammad-fahreal-60535a24a/', '_blank')}
               title="LinkedIn"
               className="border border-primary/30 bg-surface-container py-2 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors cursor-pointer"
             >
               <FaLinkedin className="text-primary w-5 h-5" />
             </button>
-            <button
+            <button data-sound
               onClick={() => window.open('/CV.pdf', '_blank')}
               title="Download CV"
               className="border border-primary/30 bg-surface-container py-2 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors cursor-pointer"

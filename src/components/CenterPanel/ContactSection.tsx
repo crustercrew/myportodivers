@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import SectionHeader from '../ui/SectionHeader'
 import { profileData } from '../../data/profileData'
+import SciFiCard from '../ui/SciFiCard'
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type FormStatus = 'idle' | 'sending' | 'sent' | 'error'
@@ -89,7 +90,7 @@ export default function ContactSection() {
   const isDisabled = status === 'sending' || status === 'sent'
 
   return (
-    <div className="flex flex-col h-full animate-fade-in">
+    <div className="flex flex-col h-full animate-crt-glitch">
       {/* ── Section Header ── */}
       <div className="px-6 py-4 border-b border-primary/20 shrink-0">
         <SectionHeader
@@ -102,7 +103,7 @@ export default function ContactSection() {
       <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-6">
 
         {/* ══ BLOCK 1: Channel Discovery ══════════════════════════════════ */}
-        <div className="border border-primary/20 bg-surface-container/40 p-5 space-y-4">
+        <SciFiCard className="p-5 space-y-4">
 
           {/* Block header */}
           <div className="flex items-center gap-2 border-b border-primary/15 pb-3">
@@ -200,10 +201,10 @@ export default function ContactSection() {
               </a>
             ))}
           </div>
-        </div>
+        </SciFiCard>
 
         {/* ══ BLOCK 2: Message Form ════════════════════════════════════════ */}
-        <div className="border border-primary/20 bg-surface-container/40 p-5 space-y-4">
+        <SciFiCard className="p-5 space-y-4">
 
           {/* Block header */}
           <div className="flex items-center gap-2 border-b border-primary/15 pb-3">
@@ -334,7 +335,7 @@ export default function ContactSection() {
               </button>
             </div>
           </form>
-        </div>
+        </SciFiCard>
 
         {/* ── Bottom note ── */}
         <p className="text-[10px] font-mono text-primary/25 text-center pb-2">

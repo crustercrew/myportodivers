@@ -4,7 +4,7 @@ import { projects } from '../../data/projects'
 
 export default function ProjectsSection() {
   return (
-    <div className="flex flex-col h-full animate-fade-in">
+    <div className="flex flex-col h-full animate-crt-glitch">
       {/* Section Header */}
       <div className="px-6 py-4 border-b border-primary/20 shrink-0">
         <SectionHeader

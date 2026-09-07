@@ -5,6 +5,7 @@ import { useNavigation, type SectionId } from '../../context/NavigationContext'
 import { profileData } from '../../data/profileData'
 import { projects } from '../../data/projects'
 import { techStack } from '../../data/techStack'
+import SciFiCard from '../ui/SciFiCard'
 
 export default function DashboardSection() {
   const { setActiveSection } = useNavigation()
@@ -14,7 +15,7 @@ export default function DashboardSection() {
   }
 
   return (
-    <div className="flex flex-col h-full animate-fade-in">
+    <div className="flex flex-col h-full animate-crt-glitch">
       {/* ── Top Header ── */}
       <div className="px-6 py-4 border-b border-primary/20 shrink-0">
         <SectionHeader
@@ -60,7 +61,7 @@ export default function DashboardSection() {
         {/* ── 2x2 Main Summaries Grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Card 1: About / Dossier Summary */}
-          <div className="border border-primary/25 bg-surface-container/50 p-4 flex flex-col justify-between">
+          <SciFiCard>
             <div>
               <div className="flex items-center justify-between pb-2 mb-3 border-b border-primary/20">
                 <div className="flex items-center gap-2">
@@ -92,10 +93,10 @@ export default function DashboardSection() {
               <span>INSPECT FULL PROFILE</span>
               <span className="material-symbols-outlined text-xs">arrow_forward</span>
             </button>
-          </div>
+          </SciFiCard>
 
           {/* Card 2: Active Projects Summary */}
-          <div className="border border-primary/25 bg-surface-container/50 p-4 flex flex-col justify-between">
+          <SciFiCard>
             <div>
               <div className="flex items-center justify-between pb-2 mb-3 border-b border-primary/20">
                 <div className="flex items-center gap-2">
@@ -128,10 +129,10 @@ export default function DashboardSection() {
               <span>VIEW ALL PROJECTS ({projects.length})</span>
               <span className="material-symbols-outlined text-xs">arrow_forward</span>
             </button>
-          </div>
+          </SciFiCard>
 
           {/* Card 3: Skills / Combat Readiness Summary */}
-          <div className="border border-primary/25 bg-surface-container/50 p-4 flex flex-col justify-between">
+          <SciFiCard>
             <div>
               <div className="flex items-center justify-between pb-2 mb-3 border-b border-primary/20">
                 <div className="flex items-center gap-2">
@@ -165,10 +166,10 @@ export default function DashboardSection() {
               <span>OPEN SKILL MATRIX</span>
               <span className="material-symbols-outlined text-xs">arrow_forward</span>
             </button>
-          </div>
+          </SciFiCard>
 
           {/* Card 4: Experience / Duty Record Summary */}
-          <div className="border border-primary/25 bg-surface-container/50 p-4 flex flex-col justify-between">
+          <SciFiCard>
             <div>
               <div className="flex items-center justify-between pb-2 mb-3 border-b border-primary/20">
                 <div className="flex items-center gap-2">
@@ -214,7 +215,7 @@ export default function DashboardSection() {
               <span>VIEW FULL SERVICE LOGS</span>
               <span className="material-symbols-outlined text-xs">arrow_forward</span>
             </button>
-          </div>
+          </SciFiCard>
         </div>
 
         {/* ── Status Banner ── */}

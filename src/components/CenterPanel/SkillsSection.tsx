@@ -1,9 +1,10 @@
 import SectionHeader from '../ui/SectionHeader'
 import { skillsData } from '../../data/skills'
+import SciFiCard from '../ui/SciFiCard'
 
 export default function SkillsSection() {
   return (
-    <div className="flex flex-col h-full animate-fade-in">
+    <div className="flex flex-col h-full animate-crt-glitch">
       {/* ── Section Header ── */}
       <div className="px-6 py-4 border-b border-primary/20 shrink-0">
         <SectionHeader
@@ -16,9 +17,9 @@ export default function SkillsSection() {
       <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {skillsData.map((category) => (
-            <div
+            <SciFiCard
               key={category.id}
-              className="border border-primary/20 bg-surface-container/60 p-5 space-y-3 hover:border-primary/50 transition-colors"
+              className="p-5 space-y-3"
             >
               {/* Category Header */}
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-primary/15 pb-2.5">
@@ -29,7 +30,7 @@ export default function SkillsSection() {
                       {category.title}
                     </h3>
                   </div>
-                  <p className="text-xs text-primary font-medium font-sans mt-0.5">
+                  <p className="text-xs text-primary font-medium font-sans mt-1">
                     {category.subtitle}
                   </p>
                 </div>
@@ -49,7 +50,7 @@ export default function SkillsSection() {
                   </span>
                 ))}
               </div>
-            </div>
+            </SciFiCard>
           ))}
         </div>
       </div>

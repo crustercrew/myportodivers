@@ -1,5 +1,6 @@
 import type { Project } from '../../utils/types'
 import StatusBadge from '../ui/StatusBadge'
+import SciFiCard from '../ui/SciFiCard'
 
 interface ProjectCardProps {
   project: Project
@@ -23,11 +24,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const hasRepo = Boolean(repoUrl && repoUrl.trim() !== '')
 
   return (
-    <div
+    <SciFiCard
       className={
         highlighted
-          ? 'border border-primary bg-surface-container/90 p-3 flex flex-col relative group cursor-pointer shadow-[0_0_15px_rgba(255,230,0,0.1)]'
-          : 'border border-primary/40 bg-surface-container-low/80 p-3 flex flex-col group hover:border-primary transition-all cursor-pointer'
+          ? 'border-primary bg-surface-container/90 shadow-[0_0_15px_rgba(255,230,0,0.15)] cursor-pointer'
+          : 'cursor-pointer'
       }
     >
       {/* ── Project Image ── */}
@@ -118,6 +119,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
       </div>
-    </div>
+    </SciFiCard>
   )
 }
