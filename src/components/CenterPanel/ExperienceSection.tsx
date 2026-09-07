@@ -1,63 +1,79 @@
 import SectionHeader from '../ui/SectionHeader'
+import { experiences } from '../../data/experienceData'
 
 export default function ExperienceSection() {
   return (
     <div className="flex flex-col h-full animate-fade-in">
-      {/* Section Header */}
+      {/* ── Section Header ── */}
       <div className="px-6 py-4 border-b border-primary/20 shrink-0">
         <SectionHeader
-          title="[ SERVICE_RECORD ] // EXPERIENCE"
-          subtitle="HISTORICAL DEPLOYMENT & CAMPAIGN LOGS"
+          title="[ WORK_HISTORY ] // EXPERIENCE"
+          subtitle="CHRONOLOGICAL CAREER TIMELINE & CLIENT ENGAGEMENTS"
         />
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-6">
-        {/* Placeholder / Template Layout */}
-        <div className="border border-primary/20 bg-surface-container/40 p-6 flex flex-col items-center justify-center text-center py-12 relative overflow-hidden">
-          {/* Subtle grid pattern / background cue */}
-          <div className="w-16 h-16 border-2 border-dashed border-primary/40 flex items-center justify-center mb-4">
-            <span className="material-symbols-outlined text-3xl text-primary animate-pulse">work_history</span>
-          </div>
-
-          <h3 className="text-sm font-bold text-white tracking-wider uppercase font-headline mb-2">
-            [ DEPLOYMENT ARCHIVES UNDER CLASSIFICATION REVIEW ]
-          </h3>
-          <p className="text-xs text-zinc-300 max-w-md font-sans mb-6 leading-relaxed">
-            Detailed mission campaigns, past squadron records, and engineering service logs are currently being compiled.
-          </p>
-
-          <div className="flex items-center gap-2 border border-primary/30 bg-primary/10 px-4 py-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-success-neon animate-ping" />
-            <span className="text-[10px] font-headline font-bold text-primary tracking-wider uppercase">
-              STATUS: READY FOR DATA ENTRY
-            </span>
-          </div>
-        </div>
-
-        {/* Tactical blueprint mockup preview */}
-        <div className="space-y-3 opacity-70">
-          <h4 className="text-xs font-bold text-primary/80 tracking-wider uppercase font-headline">
-            // SERVICE TIMELINE BLUEPRINT //
-          </h4>
-          <div className="space-y-3">
-            {[
-              { role: 'APPLICATION DEVELOPER', unit: 'PT MITRA INTEGRASI INFORMATIKA (METRODATA)', period: '2023 — PRESENT', badge: 'ACTIVE' },
-              { role: 'DESKTOP SUPPORT / PHP DEVELOPER', unit: 'PT BERCA / PT SBG SOLUSI BISNIS', period: '2022 — 2023', badge: 'COMPLETED' },
-            ].map((item, idx) => (
-              <div key={idx} className="border-l-2 border-primary/50 bg-surface-container/50 p-4 flex justify-between items-center">
-                <div>
-                  <p className="text-xs font-bold text-white font-headline tracking-wide">{item.role}</p>
-                  <p className="text-[11px] text-zinc-300 font-sans mt-0.5">{item.unit}</p>
+      {/* ── Main Content Area ── */}
+      <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
+        {experiences.map((exp) => (
+          <div
+            key={exp.id}
+            className="border border-primary/20 bg-surface-container/60 p-5 space-y-3 hover:border-primary/50 transition-colors"
+          >
+            {/* Header: Role, Client/Company, Period & Status */}
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-primary/15 pb-2.5">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-primary/70">{exp.id} //</span>
+                  <h3 className="text-sm font-bold text-white font-headline tracking-wide uppercase">
+                    {exp.role}
+                  </h3>
                 </div>
-                <div className="text-right">
-                  <span className="text-[10px] font-mono text-primary/60 block">{item.period}</span>
-                  <span className="text-[9px] font-mono text-success-neon font-bold">[{item.badge}]</span>
-                </div>
+                <p className="text-xs text-primary font-medium font-sans mt-0.5">
+                  {exp.company}
+                  {exp.client && (
+                    <span className="text-zinc-300">
+                      {' '}— Client: <span className="text-zinc-100 font-semibold">{exp.client}</span>
+                    </span>
+                  )}
+                </p>
               </div>
-            ))}
+
+              <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+                <span className="text-[11px] font-mono text-zinc-300">{exp.period}</span>
+                <span
+                  className={`text-[9px] font-mono px-1.5 py-0.5 border font-bold ${exp.status === 'ACTIVE'
+                      ? 'border-success-neon text-success-neon bg-success-neon/10'
+                      : 'border-primary/30 text-primary/70 bg-primary/5'
+                    }`}
+                >
+                  [{exp.status}]
+                </span>
+              </div>
+            </div>
+
+            {/* Bullet Highlights */}
+            <ul className="space-y-1.5">
+              {exp.description.map((bullet, idx) => (
+                <li key={idx} className="text-xs text-zinc-300 font-sans leading-relaxed flex items-start gap-2">
+                  <span className="text-primary/70 font-mono select-none mt-0.5">›</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Tech Stack Chips */}
+            <div className="flex flex-wrap gap-1.5 pt-2 border-t border-primary/10">
+              {exp.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="text-[10px] font-mono px-2 py-0.5 border border-primary/25 bg-surface-container text-primary/90"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   )

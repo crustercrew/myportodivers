@@ -8,8 +8,6 @@ export interface Project {
   imageAlt: string
   status: string
   statusColor: StatusColor
-  metricLabel: string
-  metricValue: number
   highlighted: boolean
   techStack: string[]
   liveUrl?: string
@@ -34,10 +32,36 @@ export interface TerminalLine {
   text: string
 }
 
+export interface SocialLink {
+  label: string
+  handle: string
+  url: string
+  icon: string
+}
+
 export interface ProfileData {
   id: string
   name: string
   role: string
   email: string
   location: string
+  socials: SocialLink[]
+}
+
+export interface ExperienceItem {
+  id: string
+  role: string
+  company: string
+  client?: string
+  period: string
+  status: 'ACTIVE' | 'COMPLETED'
+  description: string[]
+  techStack: string[]
+}
+
+export interface skills {
+  id: string
+  title: string
+  subtitle: string
+  skills: string[]
 }

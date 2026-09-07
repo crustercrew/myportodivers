@@ -37,12 +37,12 @@ export default function AboutSection() {
           </h3>
           <div className="grid grid-cols-2 gap-2">
             {[
-              { label: 'SPECIALIZATION', value: 'Enterprise Middleware & Backend' },
-              { label: 'PRIMARY LANG', value: 'Java / SQL / TypeScript / PHP' },
-              { label: 'FRAMEWORKS', value: 'Spring Boot / webMethods / OutSystems / React' },
-              { label: 'DATABASES', value: 'Oracle SQL / PostgreSQL / MySQL' },
-              { label: 'TOOLS & TESTING', value: 'Docker / Apache JMeter / Postman / Git' },
-              { label: 'STANDARDS', value: 'QRIS / REST APIs / CAPEX-OPEX Budgeting' },
+              { label: 'SPECIALIZATION', value: 'Enterprise Systems' },
+              { label: 'PRIMARY LANG', value: 'Java / Kotlin / SQL / TypeScript / Javascript / PHP' },
+              { label: 'FRAMEWORKS', value: 'Spring Boot / webMethods / OutSystems / React / Android Native / ExpressJS' },
+              { label: 'DATABASES', value: 'Oracle SQL / PostgreSQL / MySQL / Redis Caching' },
+              { label: 'TOOLS & TESTING', value: 'Docker / Apache JMeter / Postman / Git / Linux / CI/CD' },
+              { label: 'STANDARDS', value: 'REST APIs / Middleware Integration / Microservices Architecture / Payment Processing Systems' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -67,23 +67,23 @@ export default function AboutSection() {
               {
                 icon: 'language',
                 title: 'LANGUAGES',
-                desc: 'Indonesian (Native) · English (Professional)',
+                desc: 'Bahasa Indonesia (Native) · English (Professional)',
               },
               {
                 icon: 'school',
                 title: 'EDUCATION',
-                desc: 'Bachelor of Informatics Engineering — Bhayangkara University Surabaya (GPA 3.54)',
+                desc: 'Bachelor of Informatics Engineering — Universitas Bhayangkara Surabaya (GPA 3.54)',
               },
               {
                 icon: 'location_on',
                 title: 'BASE OF OPERATIONS',
-                desc: 'Kemiri Indah A1/18, Sidoarjo, Indonesia',
+                desc: 'Sidoarjo, Jawa Timur, Indonesia',
               },
-              {
-                icon: 'call',
-                title: 'COMMUNICATION FREQUENCY',
-                desc: '+62 89 542 082 5511 · fahrealbernov@gmail.com',
-              },
+              // {
+              //   icon: 'call',
+              //   title: 'COMMUNICATION FREQUENCY',
+              //   desc: '+62 89 542 082 5511 · fahrealbernov@gmail.com',
+              // },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-primary text-lg mt-0.5">
@@ -100,14 +100,14 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* ── Transmission End ── */}
+        {/* ── Transmission End ──
         <div className="flex items-center gap-3 pt-2 pb-4">
           <div className="flex-1 h-px bg-primary/20" />
           <span className="text-[10px] text-primary/50 tracking-widest uppercase font-mono">
             END OF DOSSIER
           </span>
           <div className="flex-1 h-px bg-primary/20" />
-        </div>
+        </div> */}
       </div>
     </div>
   )

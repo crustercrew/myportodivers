@@ -60,8 +60,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        headline: ['"Chakra Petch"', '"Space Grotesk"', 'sans-serif'],
-        'headline-lg': ['"Chakra Petch"', '"Space Grotesk"', 'sans-serif'],
+        headline: ['"Rajdhani"', '"Space Grotesk"', 'sans-serif'],
+        'headline-lg': ['"Rajdhani"', '"Space Grotesk"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },

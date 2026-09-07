@@ -49,3 +49,4 @@ coverage/
 # yarn.lock
 # pnpm-lock.yaml
 .pnpm-store
+cvku.md

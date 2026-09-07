@@ -18,7 +18,7 @@ interface StatusBadgeProps {
 export default function StatusBadge({ label, variant, className = '' }: StatusBadgeProps) {
   return (
     <span
-      className={`px-1.5 py-0.5 text-[8px] font-bold ${variantStyles[variant]} ${className}`}
+      className={`px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider ${variantStyles[variant]} ${className}`}
     >
       {label}
     </span>
