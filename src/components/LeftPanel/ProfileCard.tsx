@@ -2,7 +2,6 @@ import profileImg from "../../assets/helldivers2.jpg";
 import InfoCell from '../ui/InfoCell'
 import { profileData } from '../../data/profileData'
 import { projects } from '../../data/projects'
-import { useNavigation, type SectionId } from '../../context/NavigationContext'
 import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -12,11 +11,6 @@ interface ProfileCardProps {
 }
 
 export default function ProfileCard({ expanded = true }: ProfileCardProps) {
-  const { setActiveSection } = useNavigation()
-
-  const navigateTo = (section: SectionId) => {
-    setActiveSection(section)
-  }
 
   return (
     <div
