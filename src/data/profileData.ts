@@ -15,8 +15,8 @@ export const profileData: ProfileData = {
     },
     {
       label: 'LINKEDIN',
-      handle: 'linkedin.com/in/fahrealbernov',
-      url: 'https://linkedin.com/in/fahrealbernov',
+      handle: 'linkedin.com/in/muhammad-fahreal-60535a24a',
+      url: 'https://www.linkedin.com/in/muhammad-fahreal-60535a24a/',
       icon: 'person_pin',
     },
     {
@@ -27,4 +27,4 @@ export const profileData: ProfileData = {
     },
   ],
 }
-
+

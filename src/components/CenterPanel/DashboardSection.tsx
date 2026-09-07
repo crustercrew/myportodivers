@@ -85,7 +85,7 @@ export default function DashboardSection() {
                 ))}
               </div>
             </div>
-            <button
+            <button data-sound
               onClick={() => navigateTo('ABOUT')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-headline text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all cursor-pointer"
             >
@@ -121,7 +121,7 @@ export default function DashboardSection() {
                 ))}
               </div>
             </div>
-            <button
+            <button data-sound
               onClick={() => navigateTo('PROJECTS')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-headline text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all cursor-pointer"
             >
@@ -158,7 +158,7 @@ export default function DashboardSection() {
                 ))}
               </div>
             </div>
-            <button
+            <button data-sound
               onClick={() => navigateTo('SKILLS')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-headline text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all cursor-pointer"
             >
@@ -207,7 +207,7 @@ export default function DashboardSection() {
 
               </div>
             </div>
-            <button
+            <button data-sound
               onClick={() => navigateTo('EXPERIENCE')}
               className="w-full mt-2 py-1.5 px-3 border border-primary/40 bg-surface-container hover:bg-primary hover:text-black text-primary font-headline text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all cursor-pointer"
             >

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Animator, Text } from '@arwes/react'
+import ScrambleText from './ScrambleText'
 
 interface SectionHeaderProps {
   /** Main heading text. */
@@ -37,7 +38,13 @@ export default function SectionHeader({
           </Text>
         </Animator>
         {subtitle && (
-          <p className="text-xs font-headline font-medium text-primary/80 tracking-wider mt-0.5">{subtitle}</p>
+          <ScrambleText
+            text={subtitle}
+            duration={1000}
+            delay={200}
+            as="p"
+            className="text-xs font-headline font-medium text-primary/80 tracking-wider mt-0.5"
+          />
         )}
       </div>
       {rightContent

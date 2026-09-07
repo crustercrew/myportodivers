@@ -1,5 +1,6 @@
 import profileImg from "../../assets/helldivers2.jpg";
 import InfoCell from '../ui/InfoCell'
+import ScrambleText from '../ui/ScrambleText'
 import { profileData } from '../../data/profileData'
 import { projects } from '../../data/projects'
 import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
@@ -24,9 +25,12 @@ export default function ProfileCard({ expanded = true }: ProfileCardProps) {
         </span>
         <div className="flex items-center gap-1.5">
           <span className="inline-block w-2 h-2 rounded-full bg-success-neon animate-pulse" />
-          <span className="text-[10px] font-bold text-success-neon tracking-widest font-mono">
-            ONLINE
-          </span>
+          <ScrambleText
+            text="ONLINE"
+            duration={600}
+            delay={300}
+            className="text-[10px] font-bold text-success-neon tracking-widest font-mono"
+          />
         </div>
       </div>
 
@@ -61,10 +65,10 @@ export default function ProfileCard({ expanded = true }: ProfileCardProps) {
           {/* Name + Role + Location */}
           <div className="space-y-1">
             <h2 className="text-base font-bold text-white font-headline tracking-wider uppercase leading-tight">
-              {profileData.name}
+              <ScrambleText text={profileData.name} duration={900} delay={0} />
             </h2>
             <p className="text-xs text-primary font-bold font-headline tracking-widest uppercase">
-              {profileData.role}
+              <ScrambleText text={profileData.role} duration={700} delay={150} />
             </p>
             <div className="flex items-center gap-1.5 mt-1">
               <span className="material-symbols-outlined text-primary/70 text-sm">location_on</span>
@@ -76,10 +80,10 @@ export default function ProfileCard({ expanded = true }: ProfileCardProps) {
 
           {/* Extra stats grid */}
           <div className="grid grid-cols-2 gap-2 mt-4">
-            <InfoCell label="Domain" value="ENTERPRISE" />
-            <InfoCell label="Projects" value={`${projects.length} COMPLETED`} valueClassName="text-success-neon" />
-            <InfoCell label="Experience" value="3+ YEARS" />
-            <InfoCell label="Availability" value="OPEN TO WORK" valueClassName="text-success-neon" />
+            <InfoCell label="Domain" value="ENTERPRISE" scramble delay={400} />
+            <InfoCell label="Projects" value={`${projects.length} COMPLETED`} valueClassName="text-success-neon" scramble delay={500} />
+            <InfoCell label="Experience" value="3+ YEARS" scramble delay={600} />
+            <InfoCell label="Availability" value="OPEN TO WORK" valueClassName="text-success-neon" scramble delay={700} />
           </div>
 
           {/* Social / contact icon row */}
@@ -142,10 +146,10 @@ export default function ProfileCard({ expanded = true }: ProfileCardProps) {
           {/* Right column — info */}
           <div className="min-w-0 flex flex-col gap-1">
             <h2 className="text-lg font-bold text-white font-headline tracking-wider uppercase leading-tight truncate">
-              {profileData.name}
+              <ScrambleText text={profileData.name} duration={900} delay={0} />
             </h2>
             <p className="text-sm text-primary font-bold font-headline tracking-widest uppercase">
-              {profileData.role}
+              <ScrambleText text={profileData.role} duration={700} delay={150} />
             </p>
             <div className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-primary/70 text-sm">location_on</span>

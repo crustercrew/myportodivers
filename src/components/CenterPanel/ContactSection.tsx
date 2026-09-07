@@ -176,7 +176,7 @@ export default function ContactSection() {
           <div className="border-t border-primary/15 pt-4 space-y-2">
             <p className="text-[10px] font-mono text-primary/50 uppercase tracking-widest mb-3">Social Profiles</p>
             {profileData.socials.map((s) => (
-              <a
+              <a data-sound
                 key={s.label}
                 href={s.url}
                 target="_blank"
@@ -316,7 +316,7 @@ export default function ContactSection() {
               </div>
 
               {/* Submit button */}
-              <button
+              <button data-sound
                 type="submit"
                 disabled={isDisabled}
                 className="
