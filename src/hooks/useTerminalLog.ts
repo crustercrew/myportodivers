@@ -1,41 +1,101 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import type { TerminalLine } from '../utils/types'
-import { getCommandResponse } from '../services/commandService'
+import {
+  handleLocalCommand,
+  streamAIChat,
+  type ChatHistoryItem,
+} from '../services/aiService'
 
 const initialLog: TerminalLine[] = [
-  { type: 'system', text: '[sys] Linux kernel 6.8.9-fedora initialized.' },
-  { type: 'system', text: '[net] Connected to bernov.dev runtime daemon (TLSv1.3)' },
+  { type: 'system', text: '[sys] SES Phoenix Super Destroyer Command OS v2.5 initialized.' },
+  { type: 'system', text: '[net] Encrypted quantum link connected to PHOENIX-CORE (TLSv1.3)' },
   {
     type: 'ai',
-    text: 'bernov@dev:~$ Ready. Type "help", "skills", "projects", or "contact" for quick telemetry.',
-  },
-  { type: 'user', text: 'guest@terminal:~$ ./fetch_profile.sh --summary' },
-  { type: 'system', text: '[sys] Loading enterprise middleware & banking systems...' },
-  {
-    type: 'ai',
-    text: 'bernov@dev:~$ Profile verified: Application Developer with 3+ YRS experience in Java, Spring Boot, webMethods, & OutSystems.',
+    text: 'PHOENIX-AI: Greetings, Officer. Personnel dossier for Bernov is decrypted and standing by. Inquire about his Banking Middleware (QRIS), Telecom (IOMS), Tech Stack, or type "help".',
   },
 ]
 
 export interface UseTerminalLogResult {
   log: TerminalLine[]
-  sendCommand: (command: string) => void
+  sendCommand: (command: string) => Promise<void>
+  isStreaming: boolean
+  clearLog: () => void
 }
 
-/** Owns the tactical AI terminal's chat log and the logic for sending a command. */
+/**
+ * Owns the tactical AI terminal's chat log, command execution, and AI streaming telemetry.
+ */
 export function useTerminalLog(): UseTerminalLogResult {
   const [log, setLog] = useState<TerminalLine[]>(initialLog)
+  const [isStreaming, setIsStreaming] = useState(false)
+  const historyRef = useRef<ChatHistoryItem[]>([])
 
-  function sendCommand(command: string): void {
-    const text = command.trim()
-    if (!text) return
-
-    setLog((prev) => [...prev, { type: 'user', text: `USER: ${text}` }])
-
-    getCommandResponse(text).then((responseText) => {
-      setLog((prev) => [...prev, { type: 'ai', text: responseText }])
-    })
+  function clearLog(): void {
+    setLog([])
   }
 
-  return { log, sendCommand }
+  async function sendCommand(command: string): Promise<void> {
+    const text = command.trim()
+    if (!text || isStreaming) return
+
+    // Append user's command
+    setLog((prev) => [...prev, { type: 'user', text: `guest@ses-phoenix:~$ ${text}` }])
+
+    // Check if it matches an instant local terminal command
+    const localResult = handleLocalCommand(text)
+    if (localResult) {
+      if (localResult.type === 'clear') {
+        clearLog()
+      } else {
+        setLog((prev) => [...prev, { type: 'ai', text: localResult.content }])
+      }
+      return
+    }
+
+    // AI Query: Initialize empty streaming AI line
+    setIsStreaming(true)
+    setLog((prev) => [...prev, { type: 'ai', text: '' }])
+
+    let accumulated = ''
+    try {
+      const fullResponse = await streamAIChat(
+        text,
+        historyRef.current,
+        (chunk) => {
+          accumulated += chunk
+          setLog((prev) => {
+            if (prev.length === 0) return prev
+            const lastIndex = prev.length - 1
+            const updated = [...prev]
+            updated[lastIndex] = {
+              type: 'ai',
+              text: accumulated,
+            }
+            return updated
+          })
+        }
+      )
+
+      // Store in memory for multi-turn conversation
+      historyRef.current = [
+        ...historyRef.current.slice(-5),
+        { role: 'user', content: text },
+        { role: 'model', content: fullResponse },
+      ]
+    } catch {
+      setLog((prev) => {
+        const lastIndex = prev.length - 1
+        const updated = [...prev]
+        updated[lastIndex] = {
+          type: 'ai',
+          text: '[COMM LINK FAILURE] Neural relay timed out. Query aborted.',
+        }
+        return updated
+      })
+    } finally {
+      setIsStreaming(false)
+    }
+  }
+
+  return { log, sendCommand, isStreaming, clearLog }
 }
