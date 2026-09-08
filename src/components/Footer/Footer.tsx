@@ -1,10 +1,23 @@
-export default function Footer() {
+interface FooterProps {
+  onLock?: () => void
+}
+
+export default function Footer({ onLock }: FooterProps) {
   return (
     <footer className="flex sm:h-6 justify-between items-center px-4 mt-2 mb-2 sm:mb-0">
-      <div className="flex flex-wrap gap-2 sm:gap-4 text-[10px] text-primary/70 font-mono font-medium">
+      <div className="flex flex-wrap gap-2 sm:gap-4 text-[10px] text-primary/70 font-mono font-medium items-center">
         <span>BIT-RATE: 1.2 GB/S</span>
         <span>LATENCY: 4MS</span>
         <span className="hidden sm:inline">ENCRYPT: AES-256-QW</span>
+        {onLock && (
+          <button
+            onClick={onLock}
+            className="text-[10px] font-mono text-primary/60 hover:text-primary hover:underline cursor-pointer ml-1"
+            title="Re-lock Terminal HUD for testing"
+          >
+            [🔒 LOCK HUD]
+          </button>
+        )}
       </div>
       <div className="flex gap-1 h-2 shrink-0">
         <div className="w-8 bg-primary"></div>
