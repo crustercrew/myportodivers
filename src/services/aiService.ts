@@ -176,7 +176,9 @@ export async function streamAIChat(
 
     return fullResponse
   } catch (error: any) {
-    const errorNotice = `[COMM LINK FAILURE: ${error?.message || 'Connection lost'}]. Check network or environment configuration.`
+    const errorNotice =
+      `[AI UPLINK OFFLINE] Live AI requires production deployment.\n` +
+      `Try local commands: help · skills · status · projects · contact`
     onChunk(errorNotice)
     return errorNotice
   }

@@ -5,6 +5,7 @@ import { useNavigation, type SectionId } from '../../context/NavigationContext'
 import { profileData } from '../../data/profileData'
 import { projects } from '../../data/projects'
 import { techStack } from '../../data/techStack'
+import { experiences } from '../../data/experienceData'
 import SciFiCard from '../ui/SciFiCard'
 
 export default function DashboardSection() {
@@ -181,31 +182,24 @@ export default function DashboardSection() {
                 <span className="text-[10px] font-mono text-primary/70">SECTOR://EXPERIENCE</span>
               </div>
               <div className="space-y-2.5 mb-3">
-
-                <div className="border-l-2 border-primary pl-2.5 py-0.5">
-                  <div className="flex justify-between items-baseline">
-                    <p className="text-sm font-bold text-white font-headline tracking-wide">BACKEND DEVELOPER Jr.</p>
-                    <span className="text-xs font-mono text-success-neon font-bold">Okt 2025 - Aug 2026</span>
+                {experiences.slice(0, 3).map((exp, index) => (
+                  <div
+                    key={exp.id}
+                    className={`border-l-2 pl-2.5 py-0.5 ${index === 0 ? 'border-primary' : 'border-primary/40'}`}
+                  >
+                    <div className="flex justify-between items-baseline">
+                      <p className={`text-sm font-bold font-headline tracking-wide ${index === 0 ? 'text-white' : 'text-zinc-200'}`}>
+                        {exp.role}
+                      </p>
+                      <span className={`text-xs font-mono font-bold ${index === 0 ? 'text-success-neon' : 'text-primary/70'}`}>
+                        {exp.period}
+                      </span>
+                    </div>
+                    <p className={`text-xs font-sans mt-0.5 ${index === 0 ? 'text-zinc-300' : 'text-zinc-400'}`}>
+                      {exp.company}
+                    </p>
                   </div>
-                  <p className="text-xs text-zinc-300 font-sans mt-0.5">PT. BANK NEGARA INDONESIA (Persero) Tbk.</p>
-                </div>
-
-                <div className="border-l-2 border-primary/40 pl-2.5 py-0.5">
-                  <div className="flex justify-between items-baseline">
-                    <p className="text-sm font-bold text-white font-headline tracking-wide">FULL STACK ENGINEER</p>
-                    <span className="text-xs font-mono text-primary/70">Jan 2024 - Sep 2025</span>
-                  </div>
-                  <p className="text-xs text-zinc-300 font-sans mt-0.5">PT Telekomunikasi Selular / Telkomsel</p>
-                </div>
-
-                <div className="border-l-2 border-primary/40 pl-2.5 py-0.5">
-                  <div className="flex justify-between items-baseline">
-                    <p className="text-sm font-bold text-zinc-200 font-headline tracking-wide">JUNIOR APPLICATION DEVELOPER</p>
-                    <span className="text-xs font-mono text-primary/70">Jul 2023 - Sep 2025</span>
-                  </div>
-                  <p className="text-xs text-zinc-400 font-sans mt-0.5">PT Mitra Integrasi Informatika (Metrodata Electronics)</p>
-                </div>
-
+                ))}
               </div>
             </div>
             <button data-sound

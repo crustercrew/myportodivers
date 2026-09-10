@@ -5,7 +5,7 @@ export const experiences: ExperienceItem[] = [
     id: 'EXP-01',
     role: 'BACKEND DEVELOPER Jr.',
     company: 'PT Bank Negara Indonesia (Persero) Tbk (BNI)',
-    period: 'Oct 2025 — August 2026',
+    period: 'Oct 2025 — Aug 2026',
     status: 'COMPLETED',
     description: [
       'Engineered and maintained Merchant Onboarding enterprise services using webMethods and Java-based microservices.',
@@ -35,10 +35,10 @@ export const experiences: ExperienceItem[] = [
     id: 'EXP-03',
     role: 'APPLICATION DEVELOPER Jr. / CONSULTANT',
     company: 'PT Mitra Integrasi Informatika (Metrodata)',
-    period: 'Sep 2023 — August 2026',
+    period: 'Sep 2023 — Aug 2026',
     status: 'COMPLETED',
     description: [
-      'Enterprise application consultant specializing in Java Spring Boot, enterprise middleware, and systems integration.',
+      'Enterprise application consultant specializing in Java Spring Boot, enterprise middleware, and systems integration. Deployed as consultant to PT Bank Negara Indonesia (BNI) under Metrodata umbrella from Oct 2025 – Aug 2026.',
       'Developed and maintained Pickme Talent internal resource management platform connecting corporate engineers with enterprise clients.',
       'Graduated from intensive Metrodata Coding Camp focusing on OOP design patterns, clean architecture, and enterprise RESTful API development.',
     ],

@@ -221,7 +221,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="space-y-1">
                 <label className="text-[10px] font-mono text-primary/60 uppercase tracking-widest block">
-                  Name
+                  Name <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
@@ -239,7 +239,7 @@ export default function ContactSection() {
               </div>
               <div className="space-y-1">
                 <label className="text-[10px] font-mono text-primary/60 uppercase tracking-widest block">
-                  Email Address
+                  Email Address <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="email"
@@ -260,7 +260,7 @@ export default function ContactSection() {
             {/* Subject */}
             <div className="space-y-1">
               <label className="text-[10px] font-mono text-primary/60 uppercase tracking-widest block">
-                Subject
+                Subject <span className="text-zinc-500 text-[9px]">(optional)</span>
               </label>
               <input
                 type="text"
@@ -280,7 +280,7 @@ export default function ContactSection() {
             {/* Message body */}
             <div className="space-y-1">
               <label className="text-[10px] font-mono text-primary/60 uppercase tracking-widest block">
-                Message
+                Message <span className="text-red-400">*</span>
               </label>
               <textarea
                 name="body"
@@ -303,7 +303,7 @@ export default function ContactSection() {
               {/* Status feedback */}
               <div className="text-[10px] font-mono min-h-[16px]">
                 {status === 'idle' && (
-                  <span className="text-primary/30">All fields marked are required.</span>
+                  <span className="text-primary/30">Fields marked with <span className="text-red-400">*</span> are required.</span>
                 )}
                 {status === 'sending' && (
                   <span className="text-primary animate-pulse">Opening mail client...</span>

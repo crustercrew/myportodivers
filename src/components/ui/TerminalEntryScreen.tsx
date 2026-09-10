@@ -206,15 +206,13 @@ export default function TerminalEntryScreen({
     <div
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className={`fixed inset-0 z-50 bg-[#0b0c10]/95 backdrop-blur-md flex flex-col items-center justify-center p-3 md:p-6 select-none transition-all duration-300 ${
-        isSuccess ? 'animate-crt-glitch opacity-0 pointer-events-none' : 'opacity-100'
-      }`}
+      className={`fixed inset-0 z-50 bg-[#0b0c10]/95 backdrop-blur-md flex flex-col items-center justify-center p-3 md:p-6 select-none transition-all duration-300 ${isSuccess ? 'animate-crt-glitch opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
     >
       {/* Main Terminal Frame */}
       <div
-        className={`relative w-full max-w-xl border border-primary/50 bg-[#0d0e12]/90 p-5 md:p-8 flex flex-col shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-transform duration-150 ${
-          isErrorShake ? 'translate-x-[-6px] border-error text-error shadow-[0_0_20px_rgba(255,80,80,0.4)]' : ''
-        }`}
+        className={`relative w-full max-w-xl border border-primary/50 bg-[#0d0e12]/90 p-5 md:p-8 flex flex-col shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-transform duration-150 ${isErrorShake ? 'translate-x-[-6px] border-error text-error shadow-[0_0_20px_rgba(255,80,80,0.4)]' : ''
+          }`}
       >
         {/* Stepped Corner Brackets (matching SciFiCard design) */}
         <div aria-hidden="true" className="pointer-events-none absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-primary" />
@@ -251,7 +249,6 @@ export default function TerminalEntryScreen({
           {sequence.map((dir, idx) => {
             const isDone = idx < currentStep
             const isActive = idx === currentStep && !isSuccess
-            const isPending = idx > currentStep
 
             return (
               <button
@@ -260,13 +257,12 @@ export default function TerminalEntryScreen({
                 onClick={() => {
                   if (isActive) handleInput(dir)
                 }}
-                className={`w-12 h-12 md:w-14 md:h-14 flex items-center justify-center border transition-all duration-150 cursor-pointer ${
-                  isDone
+                className={`w-12 h-12 md:w-14 md:h-14 flex items-center justify-center border transition-all duration-150 cursor-pointer ${isDone
                     ? 'bg-primary border-primary text-black shadow-[0_0_16px_rgba(255,230,0,0.85)] scale-105'
                     : isActive
-                    ? 'border-2 border-primary bg-primary/20 text-primary animate-pulse shadow-[0_0_12px_rgba(255,230,0,0.5)] scale-100'
-                    : 'border border-primary/25 bg-surface-container/30 text-primary/35 opacity-70'
-                }`}
+                      ? 'border-2 border-primary bg-primary/20 text-primary animate-pulse shadow-[0_0_12px_rgba(255,230,0,0.5)] scale-100'
+                      : 'border border-primary/25 bg-surface-container/30 text-primary/35 opacity-70'
+                  }`}
                 title={`Step ${idx + 1}: ${dir}`}
               >
                 <HD2Arrow direction={dir} />
@@ -278,13 +274,12 @@ export default function TerminalEntryScreen({
         {/* ── Status Message Telemetry ── */}
         <div className="text-center mb-5 h-6 flex items-center justify-center">
           <span
-            className={`text-xs font-mono font-bold tracking-widest ${
-              isSuccess
+            className={`text-xs font-mono font-bold tracking-widest ${isSuccess
                 ? 'text-success-neon drop-shadow-[0_0_8px_rgba(0,255,65,0.8)]'
                 : isErrorShake
-                ? 'text-error animate-pulse'
-                : 'text-primary/90'
-            }`}
+                  ? 'text-error animate-pulse'
+                  : 'text-primary/90'
+              }`}
           >
             {statusMessage}
           </span>

@@ -31,7 +31,7 @@ export default function DashboardLayout() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen lg:h-screen p-2 select-none">
+    <div className="flex flex-col min-h-screen lg:h-screen p-2">
       {!isUnlocked && <TerminalEntryScreen onUnlock={handleUnlock} />}
       <div className="scanline"></div>
 
