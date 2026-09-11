@@ -1,4 +1,4 @@
-import profileImg from "../../assets/helldivers2.jpg";
+import profileImg from "../../assets/profile.jpeg";
 import InfoCell from '../ui/InfoCell'
 import ScrambleText from '../ui/ScrambleText'
 import { profileData } from '../../data/profileData'
